@@ -1,12 +1,22 @@
 package de.waldmaier;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SimpleJunit5Test {
+
+  private TestHelloWorld testHelloWorld;
+
+  @BeforeEach
+  public void init() {
+    testHelloWorld = new TestHelloWorld();
+  }
+
 
   @Test
   public void testSimple() {
@@ -23,9 +33,11 @@ public class SimpleJunit5Test {
 
   @Test
   public void testNoException() {
-    assertDoesNotThrow(() -> {
-      throw new Exception("l,l,l");
-    }, "no exception test");
+    assertDoesNotThrow(() -> "ok", "no exception test");
   }
 
+  @Test
+  public void testHelloWorlJacoco() {
+    assertEquals(testHelloWorld.xyz(), "xyz");
+  }
 }

@@ -1,22 +1,22 @@
 package de.waldmaier;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Spy;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@ExtendWith(MockitoExtension.class)
 public class SimpleJunit5Test {
 
+  @InjectMocks
+  @Spy
   private TestHelloWorld testHelloWorld;
-
-  @BeforeEach
-  public void init() {
-    testHelloWorld = new TestHelloWorld();
-  }
-
 
   @Test
   public void testSimple() {

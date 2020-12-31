@@ -1,5 +1,6 @@
 package de.waldmaier;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -39,5 +40,15 @@ class SimpleJunit5Test {
   @Test
   void testHelloWorlJacoco() {
     assertEquals(testHelloWorld.xyz(), "xyz");
+  }
+
+  @Test
+  void assertAll() {
+    Assertions.assertAll(
+        () -> assertTrue(true, "first"),
+        () -> assertTrue(false, "second"),
+        () -> assertTrue(true, "third"),
+        () -> assertTrue(false, "four")
+    );
   }
 }

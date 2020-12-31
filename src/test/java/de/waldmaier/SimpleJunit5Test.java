@@ -1,12 +1,12 @@
 package de.waldmaier;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -43,12 +43,12 @@ class SimpleJunit5Test {
   }
 
   @Test
-  void assertAll() {
-    Assertions.assertAll(
+  void assert_all_test() {
+    assertAll(
         () -> assertTrue(true, "first"),
-        () -> assertTrue(false, "second"),
+        () -> assertTrue(true, "second"),
         () -> assertTrue(true, "third"),
-        () -> assertTrue(false, "four")
+        () -> assertTrue(true, "four")
     );
   }
 }

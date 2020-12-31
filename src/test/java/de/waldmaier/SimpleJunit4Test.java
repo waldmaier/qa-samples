@@ -1,43 +1,43 @@
 package de.waldmaier;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Spy;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@ExtendWith(MockitoExtension.class)
-class SimpleJunit5Test {
+
+@RunWith(MockitoJUnitRunner.class)
+public class SimpleJunit4Test {
 
   @InjectMocks
   @Spy
   private TestHelloWorld testHelloWorld;
 
   @Test
-  void testSimple() {
+  public void testSimple() {
     assertTrue(true, "simple assert true");
   }
 
   @Test
-  void testException() {
+  public void testException() {
     assertThrows(IllegalStateException.class, () -> {
       throw new IllegalStateException("l,l,l");
     }, "exception test");
   }
 
-
   @Test
-  void testNoException() {
+  public void testNoException() {
     assertDoesNotThrow(() -> "ok", "no exception test");
   }
 
   @Test
-  void testHelloWorlJacoco() {
+  public void testHelloWorlJacoco() {
     assertEquals(testHelloWorld.xyz(), "xyz");
   }
 }

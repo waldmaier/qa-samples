@@ -75,7 +75,7 @@
             </goals>
             <configuration>
               <excludes>
-                <exclude>**/de/berenberg/cae/misc/startup/StartupLoader*</exclude>
+                <exclude>**/de/waldemar/StartupLoader*</exclude>
               </excludes>
             </configuration>
           </execution>
@@ -86,7 +86,7 @@
             </goals>
             <configuration>
               <excludes>
-                <exclude>**/de/berenberg/cae/misc/startup/StartupLoader*</exclude>
+                <exclude>**/de/waldemar/StartupLoader*</exclude>
               </excludes>
               <rules>
                 <rule>
